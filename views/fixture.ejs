@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPLVote-Fixtures</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container" style="text-align: center;">
+        <h1>IPLVote</h1>
+        <h4>Vote Your Favourite Team On Matchday</h4>
+    </div>
+    <div class="container">
+        <h4>Fixtures</h4>
+    </div>
+    <br>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>MatchDay</th>
+                    <th>Home</th>
+                    <th>Away</th>
+                    <th>Stadium</th>
+                    <th>HomeVotes</th>
+                    <th>AwayVotes</th>
+                    <th>VoteNow</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% fixtures.forEach((fixture)=> { %>
+                    <tr>
+                        <td><%= fixture.matchday%></td>
+                        <td><%= fixture.team1%></td>
+                        <td><%= fixture.team2%></td>
+                        <td><%= fixture.stadium%></td>
+                        <td><%= fixture.vote1%></td>
+                        <td><%= fixture.vote2%></td>
+                        <td><a href="/vote/<%= fixture.matchday %>" class="btn btn-primary">Vote</a></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        <a href="/home/" class="btn btn-primary">Home</a>
+    </div>
+</body>
+</html>
