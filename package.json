@@ -1,0 +1,19 @@
+{
+  "name": "ipl_web_app",
+  "version": "1.0.0",
+  "description": "vote for your favourite team on match day",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lakkam nithin",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mongoose": "^5.12.10"
+  }
+}
