@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPLVote-Vote</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h3>Vote</h3>
+        <h4>Once you vote for a team on a particular matchday, you cannot change, that will be fixed.</h4>
+    </div>
+    <br>
+    <div class="container">
+        <p>Matchday: <%= game.matchday %></p>
+        <p>Fixture: <%= game.team1 %> vs <%= game.team2 %></p>
+        <p>Stadium: <%= game.stadium %></p>
+        <p>HomeVotes: <%= game.vote1 %></p>
+        <p>AwayVotes: <%= game.vote2 %></p>
+        <form action="/vote/" method="POST" autocomplete="off">
+            <label for="vote_form">Vote now by selecting a team from below dropdown button</label>
+            <input type="hidden" name="matchday" value="<%= game.matchday %>">
+            <input type="hidden" name="vote1_count" value="<%= game.vote1 %>">
+            <input type="hidden" name="vote2_count" value="<%= game.vote2 %>">
+            <select name="vote_form" id="vote_form" class="custom-select">
+                <option value="homeVote"><%= game.team1 %></option>
+                <option value="awayVote"><%= game.team2 %></option>
+            </select>
+            <input type="submit" class="btn btn-primary" value="Vote">
+        </form>
+    </div>
+</body>
+</html>
